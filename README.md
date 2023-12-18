@@ -9,6 +9,15 @@ Dive in: This documentation covers how to running this repo on your machine, tec
 
 3. **Python:** `v3.10.67`
 
+## Getting Started:
+
+1. Clone this [repository](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing.git)
+   
+   ```
+   git clone https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing.git
+   ```
+   
+
 
 
 

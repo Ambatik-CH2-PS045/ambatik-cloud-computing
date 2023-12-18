@@ -57,6 +57,14 @@ Dive in: This documentation covers how to running this repo on your machine, tec
 
    ```
    Feel free to modify the value as long as your database is mysql
+   
+4. Set up database by run this command
+   ```
+   sequelize db:create
+   sequelize db:migrate
+   sequelize db:seed:all
+   ```
+   In this case, database name will be `ambatik_db`, the migration will automatically create the table and relation that you can see in this ERD picture. Also There are several dummy data        that will be filled in the seeder, such as user, article, product, quiz, seeder, answer, and batik.
 
 
 

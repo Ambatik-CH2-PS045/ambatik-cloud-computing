@@ -66,6 +66,34 @@ Dive in: This documentation covers how to running this repo on your machine, tec
    ```
    In this case, database name will be `ambatik_db`, the migration will automatically create the table and relation that you can see in this ERD picture. Also There are several dummy data        that will be filled in the seeder, such as user, article, product, quiz, seeder, answer, and batik.
 
+6. Create `.env` file like below
+   ```
+   PORT=
+   ACCESS_TOKEN_SECRET=
+   FLASK_HOST=
+   ```
+   For `PORT`, please fill in the PORT that has not been used, then `ACCESS_TOKEN_SECRET` is the token for authentication purposes, while `FLASK_HOST` is the host that will be used in the Flask application later    
+   because the node.js application will later communicate with Flask
+
+7. If you have a Google Cloud Platform credit, then please create a service account for a bucket that gives access to storing static files, such as images and machine learning models, if not then you can modify the code during the batik     prediction process and upload user profile photos. The service account JSON will be like below
+   ```
+   {
+     "type": "",
+     "project_id": "",
+     "private_key_id": "",
+     "private_key": "",
+     "client_email": "",
+     "client_id": "",
+     "auth_uri": "",
+     "token_uri": "",
+     "auth_provider_x509_cert_url": "",
+     "client_x509_cert_url": "",
+     "universe_domain": ""
+   }
+
+   ```
+8. Run the program with `npm run start` and if success, it should showing `Database Connection Success on PORT <Your .env PORT>` on your terminal
+
 
 
 

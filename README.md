@@ -95,9 +95,7 @@ Dive in: This documentation covers how to running this repo on your machine, tec
 8. Run the program with `npm run start` and if success, it should showing `Database Connection Success on PORT <Your .env PORT>` on your terminal
 
 ## Application Architecture
-<a href="https://github.com/your-username/your-repo/blob/main/path/to/fullsize/image.jpg](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/architecture.jpg" target="_blank">
-  <img src="https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/architecture.jpg" alt="Image Description">
-</a>
+[ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/architecture.jpg) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/architecture.jpg)
 
 
 

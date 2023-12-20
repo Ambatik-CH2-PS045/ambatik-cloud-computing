@@ -97,6 +97,9 @@ Dive in: This documentation covers how to running this repo on your machine, tec
 ## Application Architecture
 [ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg)
 
+Our app has two backend services:
+1. Node JS, for interaction with the mysql database so that any changes, reads, updates, or deletes of data (CRUD) will be done here.
+2. Flask, for classification of batik images will be done here. 
 
 
 

@@ -94,6 +94,8 @@ Dive in: This documentation covers how to running this repo on your machine, tec
    ```
 8. Run the program with `npm run start` and if success, it should showing `Database Connection Success on PORT <Your .env PORT>` on your terminal
 
+## Application Architecture
+
 
 
 

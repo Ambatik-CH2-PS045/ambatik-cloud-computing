@@ -877,6 +877,7 @@ GET /quiz/list/:userid
     ]
 }
 ```
+## Submit quiz
 
 ```http
 POST /quiz/submit
@@ -914,4 +915,59 @@ POST /quiz/submit
 ```
 
 </details>
+
+<details>
+  <summary>Question</summary>
+  
+  ## Get question based on quiz module
+
+  ```http
+GET /quiz/:quizId/question/:questionid
+```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `quizid` | `Integer` | `required` |
+| `questionid` | `Integer` | `required` |
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "message": "Get question",
+    "data": {
+        "id": 1,
+        "question": "Batik ini berasal dari Daerah Istimewa Yogyakarta, makna batik ini ialah cinta yang tumbuh kembali. Batik ini biasanya dipakai oleh orang tua pengantin pada hari pernikahan. Batik yang dimaksud adalah ….",
+        "answers": [
+            {
+                "id": 1,
+                "answer": "Batik Tambal",
+                "questionId": 1
+            },
+            {
+                "id": 2,
+                "answer": "Batik Truntum",
+                "questionId": 1
+            },
+            {
+                "id": 3,
+                "answer": "Batik Sogan",
+                "questionId": 1
+            },
+            {
+                "id": 4,
+                "answer": "Batik Simbut",
+                "questionId": 1
+            }
+        ]
+    }
+}
+```
+
+</details>
+
+
 

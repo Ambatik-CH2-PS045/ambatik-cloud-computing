@@ -1,5 +1,10 @@
 # Ambatik Cloud Computing Documentation
-Dive in: This documentation covers how to running this repo on your machine, tech stack, architecture, and API docs.
+Dive in, this documentation will covers:
+- [how to running this repo on your machine](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#application-architecture)
+- [tech stack](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#application-architecture)
+- [architecture](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#application-architecture)
+- [database ERD](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#application-architecture)
+- [API docs](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#application-architecture).
 
 ## Prerequisite
 
@@ -93,6 +98,9 @@ Dive in: This documentation covers how to running this repo on your machine, tec
 
    ```
 8. Run the program with `npm run start` and if success, it should showing `Database Connection Success on PORT <Your .env PORT>` on your terminal
+
+## Tech Stack
+[ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/tech_stack.jpg) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/tech_stack.jpg)
 
 ## Application Architecture
 [ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg)

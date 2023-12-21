@@ -271,6 +271,14 @@ Unlike
   <summary>User</summary>
   
  ## User register
+ ```http
+POST /users/register
+```
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `-` | `-` | `-` |
 
  ## User login
 

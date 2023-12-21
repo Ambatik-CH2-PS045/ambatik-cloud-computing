@@ -270,7 +270,7 @@ Unlike
 ## User register
 
 ```http
-    POST /users/register
+POST /users/register
 ```
 **Parameters:**
 

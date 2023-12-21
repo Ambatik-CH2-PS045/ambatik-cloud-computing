@@ -312,9 +312,7 @@ Account already exist
 
  ## User login
 
-    ```http
-POST /users/login
-```
+
 **Parameters:**
 
 | Parameter | Type | Description |

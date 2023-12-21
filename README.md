@@ -497,6 +497,7 @@ GET /product
             "product_sold": 264,
             "store_name": "Hadinata Batik Official Shop"
         },
+
     ]
 }
 ```
@@ -636,6 +637,9 @@ Success decrement product by 1
 ```
 </details>
 
+<details>
+  <summary>Order</summary>
+  
 ## Get order
 
     ```http
@@ -701,11 +705,5 @@ Success get all order by userid
     ]
 }
 ```
-    ```http
-POST /order/register
-```
-
-
-
 </details>
 

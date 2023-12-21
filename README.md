@@ -118,7 +118,7 @@ GET /article
 
 | Parameter | Type | Description |
 |---|---|---|
-| `-` | `-` | - |
+| `-` | `-` | `-` |
 
 **Responses:**
 
@@ -155,7 +155,7 @@ GET /article
  ## Get liked article
 
   ```http
-GET /article/like/:id
+GET /article/like/:id (require bearer token)
 ```
 
 **Parameters:**
@@ -199,8 +199,8 @@ GET /article/details/:id/?userid
 
 | Parameter | Type | Description |
 |---|---|---|
-| `id` | `Integer` | Article ID |
-| `userid` | `Integer` | User ID (if any) |
+| `id` | `Integer` | `Required` |
+| `userid` | `Integer` | `Optional` |
 
 **Responses:**
 
@@ -224,38 +224,44 @@ GET /article/details/:id/?userid
 ## Like or unlike article
 
   ```http
-POST /article/details/:id/?userid
+POST /article/like (require bearer token)
 ```
 
 **Parameters:**
 
 | Parameter | Type | Description |
 |---|---|---|
-| `id` | `Integer` | Article ID |
-| `userid` | `Integer` | User ID (if any) |
+| `-` | `-` | `-` |
 
-**Responses:**
+**Request Body:**
 
 ```JSON
 {
+    "userId": 1,
+    "articleId": 1
+}
+```
+
+**Responses:**
+
+Like
+```JSON
+{
     "error": false,
-    "liked": false,
-    "message": "Get detail article success with like status",
-    "data": {
-        "id": 1,
-        "title": "Istana Berbatik, Jokowi Pakai Batik Parang yang Biasa Dikenakan Raja",
-        "url_banner": "https://storage.googleapis.com/ambatik_bucket/artikel_banner/artikel1.png",
-        "author": "Devi Puspitasari - detikNews",
-        "content": "Jakarta - Presiden Joko Widodo (Jokowi) hadiri acara Istana Berbatik di depan Istana Merdeka, Jalan Medan Merdeka Utara, Jakarta Pusat. Presiden Jokowi mengenakan batik coklat dengan motif Parang Barong yang biasa dikenakan raja. \n\nBerdasarkan keterangan dari Biro Pers Sekretariat Presiden, Minggu (1/10/2023), nama motif yang dipakai Presiden Jokowi adalah Batik Parang Barong Seling Kembang atau lengkapnya Parang Barong Seling Kembang Udan Riris. \n\nMotif batik yang dipakai oleh Jokowi memiliki makna, Motif Parang atau Memerangi. Motif itu memiliki makna seorang pemimpin harus berani bersikap tegas memerangi ketidak benaran yang ada. Motif batik Parang biasa dikenakan oleh Para Raja. \n\nKemudian, motif Udan Riris. Motif Hujan Gerimis memberikan kesejukan di tengah kondisi yang gersang/kering. Sementara itu, Ibu Negara Iriana Jokowi mengenakan kain batik motif truntum sebagai atasan, dan motif parang sebagai bawahan.",
-        "total_like": 1,
-        "likes": []
-    }
+    "liked": true,
+    "message": "Success like first time"
 }
 ```
 
 
-   
-
+Unlike
+```JSON
+{
+    "error": false,
+    "liked": true,
+    "message": "Success like first time"
+}
+```
 </details>
 
 
@@ -263,6 +269,171 @@ POST /article/details/:id/?userid
 
 <details>
   <summary>User</summary>
-   Testing
+  
+  ## User register
+
+    ```http
+POST /users/register
+```
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `-` | `-` | `-` |
+
+**Request Body:**
+
+```JSON
+{
+    "name": "Jean Doe",
+    "email": "jeandoe@gmail.com",
+    "username": "jeandoe",
+    "password": "jeandoe123",
+    "phone": "081234567890"
+}
+```
+
+**Responses:**
+Success register
+```JSON
+{
+    "error": false,
+    "message": "Success register"
+}
+```
+
+Account already exist
+```JSON
+{
+    "error": true,
+    "message": "Username or email already registered yet"
+}
+```
+
+ ## User login
+
+    ```http
+POST /users/login
+```
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `-` | `-` | `-` |
+
+**Request Body:**
+
+```JSON
+{
+    "username": "jeandoe11111",
+    "password": "jeandoe123"
+}
+```
+
+**Responses:**
+Account not registered
+```JSON
+{
+    "error": true,
+    "message": "Please regist first"
+}
+```
+
+Success login
+```JSON
+{
+    "error": false,
+    "message": "Login success",
+    "data": {
+        "id": 1,
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJpYXQiOjE3MDMxNDg3Njd9.MH67wX73tS-Nz-Y1qZC8jWgqFdQQUrOXUDg0Sl0H4kk"
+    }
+}
+```
+
+## Get user details
+
+  ```http
+GET /users/details/:userid
+```
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `userid` | `integer` | `required` |
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "message": "Get user details",
+    "data": {
+        "name": "john",
+        "address": "Jakarta",
+        "email": "john@example.com",
+        "username": "johndoe",
+        "phone": "08123456789",
+        "url_profile": "https://static9.depositphotos.com/1074452/1184/i/450/depositphotos_11843630-stock-photo-jpg-key-shows-image-format.jpg",
+        "point": 0
+    }
+}
+```
+## Change photo profile
+  ```http
+POST /users/upload
+```
+**Request Form Data:**
+
+| Key | Type | Value |
+|---|---|---|
+| `file` | `file` | `file-name-example.jpg` |
+| `userid` | `text` | `1` |
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "uploaded": true,
+    "message": "Success upload photo profile",
+    "url": "https://storage.googleapis.com/ambatik_bucket/user_photo/21-12-2023-8-43-44Python-logo-notext.svg.png"
+}
+```
+
+## Edit user profile
+  ```http
+POST /users/update/:userid
+```
+
+**Request Body:**
+
+```JSON
+{
+    "address": "Jakarta Selatan",
+    "phone": "123456789011"
+}
+```
+
+**Responses:**
+
+```JSON
+{
+    "message": "Update profile success",
+    "data": {
+        "id": 3,
+        "name": "Gek Ari",
+        "address": "Jakarta Selatan",
+        "email": "gekari420@gmail.com",
+        "username": "gekari",
+        "password": "$2b$10$13TjO0k5jZkI7x04FODypOdh.bh4hi7Pb6bXsC/i7Dk1oNuE1iQby",
+        "phone": "123456789011",
+        "url_profile": "https://storage.googleapis.com/ambatik_bucket/user_photo/21-12-2023-8-43-44Python-logo-notext.svg.png",
+        "createdAt": "2023-12-21T05:52:36.000Z",
+        "updatedAt": "2023-12-21T09:02:33.852Z"
+    }
+}
+```
+
 </details>
 

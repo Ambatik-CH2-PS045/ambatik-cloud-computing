@@ -312,7 +312,9 @@ Account already exist
 
  ## User login
 
-
+    ```http
+POST /users/login
+```
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -323,8 +325,8 @@ Account already exist
 
 ```JSON
 {
-    "username": "jeandoe11111",
-    "password": "jeandoe123"
+    "error": true,
+    "message": "Please regist first"
 }
 ```
 

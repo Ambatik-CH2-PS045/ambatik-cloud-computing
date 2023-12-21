@@ -106,7 +106,7 @@ Our app has two backend services:
 
 ## API
 <details>
-  <summary>## Article</summary>
+  <summary>Article</summary>
   
    ## Get all articles
 
@@ -118,7 +118,7 @@ GET /article
 
 | Parameter | Type | Description |
 |---|---|---|
-| `-` | `public` | Giving all the articles |
+| `-` | `-` | - |
 
 **Responses:**
 
@@ -152,7 +152,7 @@ GET /article
 }
 ```
 
- Get liked article
+ ## Get liked article
 
   ```http
 GET /article/like/:id
@@ -162,7 +162,7 @@ GET /article/like/:id
 
 | Parameter | Type | Description |
 |---|---|---|
-| `id` | `private (require bearer token)` | Giving article details based on the article id |
+| `id` | `Integer` | Article id |
 
 **Responses:**
 
@@ -188,9 +188,79 @@ GET /article/like/:id
     ]
 }
 ```
+
+## Get article detail
+
+  ```http
+GET /article/details/:id/?userid
+```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `id` | `Integer` | Article ID |
+| `userid` | `Integer` | User ID (if any) |
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "liked": false,
+    "message": "Get detail article success with like status",
+    "data": {
+        "id": 1,
+        "title": "Istana Berbatik, Jokowi Pakai Batik Parang yang Biasa Dikenakan Raja",
+        "url_banner": "https://storage.googleapis.com/ambatik_bucket/artikel_banner/artikel1.png",
+        "author": "Devi Puspitasari - detikNews",
+        "content": "Jakarta - Presiden Joko Widodo (Jokowi) hadiri acara Istana Berbatik di depan Istana Merdeka, Jalan Medan Merdeka Utara, Jakarta Pusat. Presiden Jokowi mengenakan batik coklat dengan motif Parang Barong yang biasa dikenakan raja. \n\nBerdasarkan keterangan dari Biro Pers Sekretariat Presiden, Minggu (1/10/2023), nama motif yang dipakai Presiden Jokowi adalah Batik Parang Barong Seling Kembang atau lengkapnya Parang Barong Seling Kembang Udan Riris. \n\nMotif batik yang dipakai oleh Jokowi memiliki makna, Motif Parang atau Memerangi. Motif itu memiliki makna seorang pemimpin harus berani bersikap tegas memerangi ketidak benaran yang ada. Motif batik Parang biasa dikenakan oleh Para Raja. \n\nKemudian, motif Udan Riris. Motif Hujan Gerimis memberikan kesejukan di tengah kondisi yang gersang/kering. Sementara itu, Ibu Negara Iriana Jokowi mengenakan kain batik motif truntum sebagai atasan, dan motif parang sebagai bawahan.",
+        "total_like": 1,
+        "likes": []
+    }
+}
+```
+
+## Like or unlike article
+
+  ```http
+POST /article/details/:id/?userid
+```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `id` | `Integer` | Article ID |
+| `userid` | `Integer` | User ID (if any) |
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "liked": false,
+    "message": "Get detail article success with like status",
+    "data": {
+        "id": 1,
+        "title": "Istana Berbatik, Jokowi Pakai Batik Parang yang Biasa Dikenakan Raja",
+        "url_banner": "https://storage.googleapis.com/ambatik_bucket/artikel_banner/artikel1.png",
+        "author": "Devi Puspitasari - detikNews",
+        "content": "Jakarta - Presiden Joko Widodo (Jokowi) hadiri acara Istana Berbatik di depan Istana Merdeka, Jalan Medan Merdeka Utara, Jakarta Pusat. Presiden Jokowi mengenakan batik coklat dengan motif Parang Barong yang biasa dikenakan raja. \n\nBerdasarkan keterangan dari Biro Pers Sekretariat Presiden, Minggu (1/10/2023), nama motif yang dipakai Presiden Jokowi adalah Batik Parang Barong Seling Kembang atau lengkapnya Parang Barong Seling Kembang Udan Riris. \n\nMotif batik yang dipakai oleh Jokowi memiliki makna, Motif Parang atau Memerangi. Motif itu memiliki makna seorang pemimpin harus berani bersikap tegas memerangi ketidak benaran yang ada. Motif batik Parang biasa dikenakan oleh Para Raja. \n\nKemudian, motif Udan Riris. Motif Hujan Gerimis memberikan kesejukan di tengah kondisi yang gersang/kering. Sementara itu, Ibu Negara Iriana Jokowi mengenakan kain batik motif truntum sebagai atasan, dan motif parang sebagai bawahan.",
+        "total_like": 1,
+        "likes": []
+    }
+}
+```
+
+
    
 
 </details>
+
+
+
+
 <details>
   <summary>User</summary>
    Testing

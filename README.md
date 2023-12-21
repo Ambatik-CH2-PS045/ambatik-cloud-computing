@@ -640,10 +640,10 @@ Success decrement product by 1
 <details>
   <summary>Order</summary>
 
-## Get order
+## Get all order by specified user id
 
   ```http
-GET /article
+GET /order/:userid
 ```
 
 **Parameters:**
@@ -705,5 +705,213 @@ Success get all order by userid
     ]
 }
 ```
+
+## Get order details
+
+  ```http
+GET /order/details/:id/:userid
+```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `id` | `Integer` | `required` |
+| `userid` | `Integer` | `required` |
+
+**Response**
+
+```JSON
+{
+    "error": false,
+    "message": "Get detail detail order",
+    "data": [
+        {
+            "id": 1,
+            "total_item": 9,
+            "total_price": 2037000,
+            "products": [
+                {
+                    "name": "KAIN BATIK TULIS ASLI BAKARAN PATI",
+                    "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/produk1.png",
+                    "price": 135000,
+                    "store_name": "Deny Batik",
+                    "detail_order": {
+                        "each_qty": 4
+                    }
+                },
+                {
+                    "name": "Hadinata Batik Pria Kemeja Panjang Furing Semi Sutra Zafeer Zahra",
+                    "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/produk2.png",
+                    "price": 419000,
+                    "store_name": "Hadinata Batik Official Shop",
+                    "detail_order": {
+                        "each_qty": 3
+                    }
+                },
+                {
+                    "name": "Batik Pria WAYANG SOGAN Full Furing Bahan Katun Halus High Quality",
+                    "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/produk3.png",
+                    "price": 120000,
+                    "store_name": "Batik Dewa Ruci",
+                    "detail_order": {
+                        "each_qty": 2
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+## Checkout
+
+  ```http
+POST /article/like (require bearer token)
+```
+
+**Request Body:**
+
+```JSON
+{
+    "totalqty": 1,
+    "grandtotal": 935000,
+    "userId": 1,
+    "eachqtys": [1],
+    "eachprices": [935000],
+    "productIds": [1]
+}
+```
+
+**Response**
+
+Checkout
+```JSON
+{
+    "error": false,
+    "checkout": true,
+    "message": "Successfully checkout product & remove product from cart"
+}
+```
+</details>
+
+<details>
+  <summary>Quiz</summary>
+  
+  ## Get all quiz module
+
+  ```http
+GET /quiz/list/:userid
+```
+
+**Parameters:**
+| Parameter | Type | Description |
+|---|---|---|
+| `userid` | `Integer` | `optional` |
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "message": "Get all quiz type",
+    "data": [
+        {
+            "id": 1,
+            "type": "Quiz 1",
+            "quiz_histories": []
+        },
+        {
+            "id": 2,
+            "type": "Quiz 2",
+            "quiz_histories": []
+        },
+        {
+            "id": 3,
+            "type": "Quiz 3",
+            "quiz_histories": []
+        }
+    ]
+}
+```
+
+ ## Get quiz leaderboard
+
+ ```http
+ GET /quiz/leaderboard
+ ```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `-` | `-` | `-` |
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "message": "Get user leaderboard",
+    "data": [
+        {
+            "name": "Austin Lieandro",
+            "point": 200,
+            "url_profile": "https://storage.googleapis.com/ambatik_bucket/user_photo/21-12-2023-3-23-40IMG_20231221_111712-1703132232312_7691825550391038764.jpg"
+        },
+        {
+            "name": "adam",
+            "point": 200,
+            "url_profile": "https://storage.googleapis.com/ambatik_bucket/user_photo/default-photo-profile.png"
+        },
+        {
+            "name": "Gek Ari",
+            "point": 100,
+            "url_profile": "https://storage.googleapis.com/ambatik_bucket/user_photo/21-12-2023-8-43-44Python-logo-notext.svg.png"
+        },
+        {
+            "name": "john",
+            "point": 0,
+            "url_profile": "https://static9.depositphotos.com/1074452/1184/i/450/depositphotos_11843630-stock-photo-jpg-key-shows-image-format.jpg"
+        },
+    ]
+}
+```
+
+```http
+POST /quiz/submit
+```
+
+**Request Body:**
+
+```JSON
+{
+    "userid": 1,
+    "quizid": 1,
+    "questionIds": [1,2,3,4,5],
+    "answerIds": [2,7,10,14,19]
+}
+```
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "message": "Submitted quiz and get result",
+    "data": [
+        {
+            "summary": {
+                "firstAttempt": true,
+                "previousHighest": null,
+                "totalCorrect": 5,
+                "totalWrong": 0,
+                "accumulatePoint": 500
+            }
+        }
+    ]
+}
+```
+
 </details>
 

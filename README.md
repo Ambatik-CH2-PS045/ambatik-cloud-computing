@@ -270,14 +270,9 @@ Unlike
 <details>
   <summary>User</summary>
   
-<<<<<<< HEAD
 ## User register
 
     ```http
-=======
- ## User register
- ```http
->>>>>>> 09a4d6d3eb68269e845b22ef2e3584531e51e99a
 POST /users/register
 ```
 **Parameters:**

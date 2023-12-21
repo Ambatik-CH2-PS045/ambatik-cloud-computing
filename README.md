@@ -293,6 +293,7 @@ POST /users/register
 ```
 
 **Responses:**
+<br>
 Success register
 ```JSON
 {
@@ -328,6 +329,7 @@ POST /users/register
 ```
 
 **Responses:**
+<br>
 Account not registered
 ```JSON
 {

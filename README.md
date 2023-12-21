@@ -639,11 +639,11 @@ Success decrement product by 1
 
 <details>
   <summary>Order</summary>
-  
+
 ## Get order
 
-    ```http
-GET /order/:userid (require bearer token)
+  ```http
+GET /article
 ```
 
 **Parameters:**

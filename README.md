@@ -3,7 +3,7 @@ Dive in, this documentation will covers:
 - [how to running this repo on your machine](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#getting-started)
 - [tech stack](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#tech-stack)
 - [architecture](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#application-architecture)
-- [database ERD](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/##application-entity-relationship-diagram)
+- [database ERD](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#application-entity-relationship-diagram)
 - [API docs](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/#api).
 
 ## Prerequisite

@@ -264,9 +264,6 @@ Unlike
 ```
 </details>
 
-
-
-
 <details>
   <summary>User</summary>
   
@@ -296,6 +293,7 @@ POST /users/register
 **Responses:**
 <br>
 Success register
+
 ```JSON
 {
     "error": false,
@@ -304,6 +302,7 @@ Success register
 ```
 
 Account already exist
+
 ```JSON
 {
     "error": true,

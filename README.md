@@ -95,8 +95,14 @@ Dive in: This documentation covers how to running this repo on your machine, tec
 8. Run the program with `npm run start` and if success, it should showing `Database Connection Success on PORT <Your .env PORT>` on your terminal
 
 ## Application Architecture
-[ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/architecture.jpg) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/architecture.jpg)
+[ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg)
 
+Our app has two backend services:
+1. Node JS, for interaction with the mysql database so that any changes, reads, updates, or deletes of data (CRUD) will be done here.
+2. Flask, for classification of batik images will be done here.
+
+## Application Entity Relationship Diagram
+[ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg)
 
 
 

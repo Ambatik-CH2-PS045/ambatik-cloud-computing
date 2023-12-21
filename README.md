@@ -105,6 +105,8 @@ Our app has two backend services:
 [ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/ERD_Ambatik.png) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/ERD_Ambatik.png)
 
 ## API
+The following is documentation for the Ambatik application API, we also provide API documentation on [Postman](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing?tab=readme-ov-file#application-entity-relationship-diagram). 
+
 <details>
   <summary>Article</summary>
   

@@ -269,8 +269,8 @@ Unlike
   
 ## User register
 
-    ```http
-POST /users/register
+```http
+    POST /users/register
 ```
 **Parameters:**
 
@@ -312,7 +312,7 @@ Account already exist
 
 ## User login
 
-    ```http
+```http
 POST /users/login
 ```
 **Parameters:**

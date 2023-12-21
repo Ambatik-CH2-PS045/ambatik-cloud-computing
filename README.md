@@ -322,8 +322,8 @@ POST /users/register
 
 ```JSON
 {
-    "error": true,
-    "message": "Please regist first"
+    "username": "johndoe",
+    "password": "john123"
 }
 ```
 

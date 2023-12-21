@@ -384,7 +384,7 @@ GET /users/details/:userid
 
 ## Change photo profile
   ```http
-POST /users/upload
+POST /users/upload (require bearer token)
 ```
 **Request Form Data:**
 
@@ -561,7 +561,7 @@ GET /product/cart/:userid (require bearer token)
 ## Add / reduce product to cart
 
 ```http
-POST /product/cart
+POST /product/cart (require bearer token)
 ```
 **Request Body:**
 <br>Add Product</br>
@@ -626,7 +626,7 @@ Success decrement product by 1
 ## Get all order by specified user id
 
   ```http
-GET /order/:userid
+GET /order/:userid (require bearer token)
 ```
 
 **Parameters:**
@@ -692,7 +692,7 @@ Success get all order by userid
 ## Get order details
 
   ```http
-GET /order/details/:id/:userid
+GET /order/details/:id/:userid (require bearer token)
 ```
 
 **Parameters:**
@@ -863,7 +863,7 @@ GET /quiz/list/:userid
 ## Submit quiz
 
 ```http
-POST /quiz/submit
+POST /quiz/submit (require bearer token)
 ```
 
 **Request Body:**
@@ -1075,7 +1075,7 @@ GET /batik/:id
 ## Prediction and upload batik
 
 ```http
-POST /batik/predict
+POST /batik/predict (require bearer token)
 ```
 
 **Request Form Data:**

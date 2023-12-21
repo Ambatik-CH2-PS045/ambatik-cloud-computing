@@ -104,6 +104,53 @@ Our app has two backend services:
 ## Application Entity Relationship Diagram
 [ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/ERD_Ambatik.png) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/ERD_Ambatik.png)
 
+## API
+<details>
+  <summary>Article</summary>
+  Get all articles
 
+  ```http
+GET /article
+```
 
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `-` | `string` | Giving all the articles |
+
+**Responses:**
+
+```
+ {
+    "error": false,
+    "message": "Get all article success",
+    "data": [
+        {
+            "id": 1,
+            "title": "Istana Berbatik, Jokowi Pakai Batik Parang yang Biasa Dikenakan Raja",
+            "url_banner": "https://storage.googleapis.com/ambatik_bucket/artikel_banner/artikel1.png",
+            "author": "Devi Puspitasari - detikNews",
+            "content": "Jakarta - Presiden Joko Widodo (Jokowi) hadiri acara Istana Berbatik di depan Istana Merdeka, Jalan Medan Merdeka Utara, Jakarta Pusat. Presiden Jokowi mengenakan batik coklat dengan motif Parang Barong yang biasa dikenakan raja. \n\nBerdasarkan keterangan dari Biro Pers Sekretariat Presiden, Minggu (1/10/2023), nama motif yang dipakai Presiden Jokowi adalah Batik Parang Barong Seling Kembang atau lengkapnya Parang Barong Seling Kembang Udan Riris. \n\nMotif batik yang dipakai oleh Jokowi memiliki makna, Motif Parang atau Memerangi. Motif itu memiliki makna seorang pemimpin harus berani bersikap tegas memerangi ketidak benaran yang ada. Motif batik Parang biasa dikenakan oleh Para Raja. \n\nKemudian, motif Udan Riris. Motif Hujan Gerimis memberikan kesejukan di tengah kondisi yang gersang/kering. Sementara itu, Ibu Negara Iriana Jokowi mengenakan kain batik motif truntum sebagai atasan, dan motif parang sebagai bawahan.",
+            "total_like": 0,
+            "createdAt": "2023-12-21T03:22:05.000Z",
+            "updatedAt": "2023-12-21T03:22:05.000Z"
+        },
+        {
+            "id": 2,
+            "title": "Jokowi: Kita Harus Berani Perkenalkan Batik ke Acara Internasional",
+            "url_banner": "https://storage.googleapis.com/ambatik_bucket/artikel_banner/artikel2.png",
+            "author": "Yodie Hardiyan - Bisnis.com",
+            "content": "Bisnis.com, JAKARTA--- Presiden Joko Widodo menyatakan masyarakat Indonesia harus berani memperkenalkan batik ke acara-acara internasional. Pernyataan itu disampaikan oleh Jokowi dalam acara peringatan Hari Batik Nasional ke-10 di Puro Mangkunegaran, Kota Surakarta, Rabu, (2/10/2019). \n\n“Kita juga harus berani memperkenalkan batik ke acara-acara internasional dan menjadikan batik sebagai duta budaya Indonesia pada masyarakat dunia,” tuturnya. Dalam kesempatan itu, Jokowi bercerita pertemuannya dengan mantan Perdana Menteri Australia, Malcolm Turnbull, beberapa waktu lalu. Saat itu, Turnbull datang dengan mengenakan batik yang telah disiapkan oleh Ibu Negara Iriana. Presiden mengaku dibuat pangling dengan penampilan Turnbull itu. “Saya pangling karena batiknya bagus sehingga betul-betul mengubah (gambaran) bahwa beliau bukan dari Australia, kelihatan dari Solo,” ucapnya. \n\nPresiden juga sangat senang mendengar bahwa pelajaran soal batik diberikan dalam muatan lokal di sejumlah sekolah. Saat Presiden menanyakan hal tersebut kepada salah satu pelajar SMK yang hadir dalam acara tersebut, pelajar itu menyampaikan bahwa pelajaran membatik diberikan di sekolah sebanyak tiga kali dalam seminggu. “Saya kira tiga kali sudah lebih dari cukup asal komitmen itu kita pegang terus sehingga komitmen untuk menjaga pengakuan Unesco yang menetapkan batik menjadi warisan kemanusiaan untuk budaya lisan dan nonbendawi betul-betul terus akan bisa kita pegang,” ujarnya.",
+            "total_like": 0,
+            "createdAt": "2023-12-21T03:22:05.000Z",
+            "updatedAt": "2023-12-21T03:22:05.000Z"
+        },
+
+     ]
+}
+```
+   
+
+</details>
 

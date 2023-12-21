@@ -107,7 +107,8 @@ Our app has two backend services:
 ## API
 <details>
   <summary>Article</summary>
-  Get all articles
+  
+   Get all articles
 
   ```http
 GET /article
@@ -117,11 +118,11 @@ GET /article
 
 | Parameter | Type | Description |
 |---|---|---|
-| `-` | `string` | Giving all the articles |
+| `-` | `public` | Giving all the articles |
 
 **Responses:**
 
-```
+```JSON
  {
     "error": false,
     "message": "Get all article success",
@@ -150,7 +151,48 @@ GET /article
      ]
 }
 ```
+
+ Get liked article
+
+  ```http
+GET /article/like/:id
+```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `id` | `private (require bearer token)` | Giving article details based on the article id |
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "message": "Get all liked article success",
+    "data": [
+        {
+            "id": 1,
+            "title": "Istana Berbatik, Jokowi Pakai Batik Parang yang Biasa Dikenakan Raja",
+            "url_banner": "https://storage.googleapis.com/ambatik_bucket/artikel_banner/artikel1.png",
+            "author": "Devi Puspitasari - detikNews",
+            "content": "Jakarta - Presiden Joko Widodo (Jokowi) hadiri acara Istana Berbatik di depan Istana Merdeka, Jalan Medan Merdeka Utara, Jakarta Pusat. Presiden Jokowi mengenakan batik coklat dengan motif Parang Barong yang biasa dikenakan raja. \n\nBerdasarkan keterangan dari Biro Pers Sekretariat Presiden, Minggu (1/10/2023), nama motif yang dipakai Presiden Jokowi adalah Batik Parang Barong Seling Kembang atau lengkapnya Parang Barong Seling Kembang Udan Riris. \n\nMotif batik yang dipakai oleh Jokowi memiliki makna, Motif Parang atau Memerangi. Motif itu memiliki makna seorang pemimpin harus berani bersikap tegas memerangi ketidak benaran yang ada. Motif batik Parang biasa dikenakan oleh Para Raja. \n\nKemudian, motif Udan Riris. Motif Hujan Gerimis memberikan kesejukan di tengah kondisi yang gersang/kering. Sementara itu, Ibu Negara Iriana Jokowi mengenakan kain batik motif truntum sebagai atasan, dan motif parang sebagai bawahan.",
+            "total_like": 1,
+            "likes": [
+                {
+                    "id": 2,
+                    "status_like": "1"
+                }
+            ]
+        }
+    ]
+}
+```
    
 
+</details>
+<details>
+  <summary>User</summary>
+   Testing
 </details>
 

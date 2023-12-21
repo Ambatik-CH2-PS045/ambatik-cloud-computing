@@ -102,7 +102,7 @@ Our app has two backend services:
 2. Flask, for classification of batik images will be done here.
 
 ## Application Entity Relationship Diagram
-[ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/application_architecture.jpg)
+[ ![](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/ERD_Ambatik.png) ](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing/blob/main/assets/ERD_Ambatik.png)
 
 
 

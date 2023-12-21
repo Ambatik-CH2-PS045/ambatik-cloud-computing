@@ -106,9 +106,9 @@ Our app has two backend services:
 
 ## API
 <details>
-  <summary>Article</summary>
+  <summary><b>Article</b></summary>
   
-   Get all articles
+   <b>Get all articles</b>
 
   ```http
 GET /article

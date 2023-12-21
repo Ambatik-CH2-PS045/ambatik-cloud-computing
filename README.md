@@ -270,86 +270,9 @@ Unlike
 <details>
   <summary>User</summary>
   
-  ## User register
-
-    ```http
-POST /users/register
-```
-**Parameters:**
-
-| Parameter | Type | Description |
-|---|---|---|
-| `-` | `-` | `-` |
-
-**Request Body:**
-
-```JSON
-{
-    "name": "Jean Doe",
-    "email": "jeandoe@gmail.com",
-    "username": "jeandoe",
-    "password": "jeandoe123",
-    "phone": "081234567890"
-}
-```
-
-**Responses:**
-Success register
-```JSON
-{
-    "error": false,
-    "message": "Success register"
-}
-```
-
-Account already exist
-```JSON
-{
-    "error": true,
-    "message": "Username or email already registered yet"
-}
-```
+ ## User register
 
  ## User login
-
-    ```http
-POST /users/login
-```
-**Parameters:**
-
-| Parameter | Type | Description |
-|---|---|---|
-| `-` | `-` | `-` |
-
-**Request Body:**
-
-```JSON
-{
-    "error": true,
-    "message": "Please regist first"
-}
-```
-
-**Responses:**
-Account not registered
-```JSON
-{
-    "error": true,
-    "message": "Please regist first"
-}
-```
-
-Success login
-```JSON
-{
-    "error": false,
-    "message": "Login success",
-    "data": {
-        "id": 1,
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJpYXQiOjE3MDMxNDg3Njd9.MH67wX73tS-Nz-Y1qZC8jWgqFdQQUrOXUDg0Sl0H4kk"
-    }
-}
-```
 
 ## Get user details
 

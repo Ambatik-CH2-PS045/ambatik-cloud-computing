@@ -64,7 +64,7 @@ Dive in: This documentation covers how to running this repo on your machine, tec
    sequelize db:migrate
    sequelize db:seed:all
    ```
-   In this case, database name will be `ambatik_db`, the migration will automatically create the table and relation that you can see in this ERD picture. Also There are several dummy data        that will be filled in the seeder, such as user, article, product, quiz, seeder, answer, and batik.
+   In this case, database name will be `ambatik_db`, the migration will automatically create the table and relation that you can see in this [ERD picture](https://github.com/Ambatik-CH2-PS045/ambatik-cloud-computing?tab=readme-ov-file#application-entity-relationship-diagram). Also There are several dummy data        that will be        filled in the seeder, such as user, article, product, quiz, seeder, answer, and    batik.
 
 6. Create `.env` file like below
    ```

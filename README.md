@@ -967,7 +967,225 @@ GET /quiz/:quizId/question/:questionid
 }
 ```
 
+
+
 </details>
 
+<details>
+  <summary>Batik</summary>
 
+  ## Get question based on quiz module
+
+```http
+GET /batik/
+```  
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `-` | `-` | `-` |
+
+**Responses:**
+```JSON
+{
+    "error": false,
+    "message": "Get all batik success",
+    "data": [
+        {
+            "id": 1,
+            "name": "Batik Truntum",
+            "url_batik": "https://storage.googleapis.com/ambatik_bucket/batik_photo/1_truntum.jpg",
+            "origin": "Daerah Istimewa Yogyakarta"
+        },
+        {
+            "id": 2,
+            "name": "Batik Tambal",
+            "url_batik": "https://storage.googleapis.com/ambatik_bucket/batik_photo/2_tambal.jpg",
+            "origin": "Daerah Istimewa Yogyakarta"
+        },
+        {
+            "id": 3,
+            "name": "Batik Sogan",
+            "url_batik": "https://storage.googleapis.com/ambatik_bucket/batik_photo/3_sogan.jpg",
+            "origin": "Yogyakarta dan Solo"
+        },
+    ]
+}
+```
+
+## Get batik details
+
+```http
+GET /batik/:id
+```
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `id` | `Integer` | `Required` |
+
+**Responses:**
+```JSON
+{
+    "error": false,
+    "message": "Get selected batik",
+    "data": {
+        "name": "Batik Sogan",
+        "url_batik": "https://storage.googleapis.com/ambatik_bucket/batik_photo/3_sogan.jpg",
+        "origin": "Yogyakarta dan Solo",
+        "meaning": "Batik Sogan adalah salah satu jenis batik klasik. Nama Sogan diambil dari pohon soga yang digunakan dalam proses pembuatan batik ini. Batik Sogan sendiri berasal dari Yogyakarta dan Solo. Namun, kedua batiknya tidak mirip. Perbedaan batiknya terletak di warna. Umumnya batik Sogan Yogya berwarna coklat tua, hitam dan putih. Sementara batik Sogan Solo didominasi warna orange muda dan coklat.",
+        "making_process": "- Pengkhetelan: Membuat pola atau motif batik pada kertas \n- Menyorek: Memindahkan pola dari kertas ke kain \n- Menyanting: Melekatkan malam atau jaringan pada kain untuk menjaga pola \n- Menembok: Menyusun kain yang telah diperkhet dan disanting dengan lain \n- Nyelup: Melakukan proses nyelup untuk menjaga pola pada kain \n- Pewarnaan: Menggunakan cara mbabar untuk memperawatkan bahan dengan lain selama proses pembatikan \n- Pembersihan: Menyaring dan membersihkan kain yang telah melalui proses pembatikan",
+        "usage_purpose": "Dulunya, batik ini dipakai raja-raja di Jawa khususnya keraton kesultanan Solo. Namun, sekarang dapat dipakai oleh siapa saja, baik warga keraton maupun orang biasa."
+    },
+    "products": [
+        {
+            "id": 3,
+            "name": "Batik Pria WAYANG SOGAN Full Furing Bahan Katun Halus High Quality",
+            "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/produk3.png",
+            "price": 120000,
+            "rating": 4.7,
+            "product_sold": 461,
+            "store_name": "Batik Dewa Ruci"
+        },
+        {
+            "id": 19,
+            "name": "Aryadawi Batik Sogan Blouse",
+            "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/produk24.png",
+            "price": 369000,
+            "rating": 4.8,
+            "product_sold": 100,
+            "store_name": "DhieVine Batik"
+        },
+        {
+            "id": 28,
+            "name": "Batik Sogan Solo Pria Lengan Panjang Katun Premium Lapis Furing Adem",
+            "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/sogan_1.jpg",
+            "price": 203500,
+            "rating": 4.9,
+            "product_sold": 250,
+            "store_name": "Batik Fauzana"
+        },
+        {
+            "id": 29,
+            "name": "Baju Kemeja Lengan Panjang Batik Sogan Katun",
+            "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/sogan_2.jpg",
+            "price": 150000,
+            "rating": 5,
+            "product_sold": 7,
+            "store_name": "My Ethnic Batik"
+        },
+        {
+            "id": 30,
+            "name": "Kemeja Batik Pria Lengan Panjang Naga Bulan Sogan By Batik Florist",
+            "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/sogan_3.jpg",
+            "price": 160000,
+            "rating": 5,
+            "product_sold": 7,
+            "store_name": "Galeri Batik Ardev"
+        }
+    ]
+}
+```
+
+## Prediction and upload batik
+
+```http
+POST /batik/predict
+```
+
+**Request Form Data:**
+
+| Key | Type | Value |
+|---|---|---|
+| `file` | `file` | `file-name-example.jpg` |
+
+**Responses:**
+
+```JSON
+{
+    "error": false,
+    "message": "Get prediction batik",
+    "batikName": "pring sedapur",
+    "accuracy": 91.72,
+    "data": {
+        "id": 6,
+        "name": "Batik Pring Sedapur",
+        "url_batik": "https://storage.googleapis.com/ambatik_bucket/batik_photo/6_pring_sedapur.jpg",
+        "origin": "Sidomukti, Jawa Timur",
+        "meaning": "Pring Sedapur merupakan motif batik yang terkenal unik dan indah. Pasalnya, motif batik khas Jawa Timur ini memadukan corak pohon bambu, dengan unsur-unsur alam. Menjadikan tanaman bambu sebagai objek utama, batik motif Pring Sedapur melambangkan persatuan dan kekuatan.",
+        "making_process": "Untuk mengembangkan produk batik Pring Sedapur, dapat dilakukan dengan menciptakan inovasi motif-motif baru yang lebih menarik dan juga campur \nProses pembuatan batik pada umumnya melibatkan beberapa tahap, seperti membuat pola, menggambar pola pada kain, mengaplikasikan malam pada bagian-bagian tertentu pada kain, pewarnaan, dan pembersihan \nSetiap motif batik memiliki ciri khas dan teknik pembuatan yang berbeda-beda, tergantung pada daerah asal dan tradisi yang berkembang di masyarakat setempat",
+        "usage_purpose": "Motif batik khas Jawa Timur ini memadukan corak pohon bambu, dengan unsur-unsur alam. Menjadikan tanaman bambu sebagai objek utama, batik motif Pring Sedapur melambangkan persatuan dan kekuatan. Dengan kata lain, motif batik ini mengajarkan manusia untuk hidup bersama dan rukun satu sama lain."
+    },
+    "products": [
+        {
+            "id": 37,
+            "name": "Pring Sedapur - Kemeja Batik",
+            "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/sekar_jagad_3.jpg",
+            "price": 245000,
+            "rating": 5,
+            "product_sold": 30,
+            "store_name": "Krishan Batik"
+        },
+        {
+            "id": 38,
+            "name": "Pring Sedapur - Kemeja Batik",
+            "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/pring_sedapur_1.jpg",
+            "price": 245000,
+            "rating": 5,
+            "product_sold": 30,
+            "store_name": "Krishan Batik"
+        },
+        {
+            "id": 39,
+            "name": "Promo Undurjoyo - Blouse Batik Motif Pring Sedapur Murah",
+            "url_product": "https://storage.googleapis.com/ambatik_bucket/produk_photo/pring_sedapur_2.jpg",
+            "price": 118800,
+            "rating": 4.5,
+            "product_sold": 45,
+            "store_name": "Malek Shop"
+        }
+    ]
+}
+```
+
+## Personalization
+```http
+POST /batik/personalization
+```
+
+**Request Body:**
+```JSON
+{
+    "userAnswers": [2,2,2]
+}
+```
+
+**Responses:**
+```JSON
+{
+    "error": false,
+    "message": "Get selected batik",
+    "data": [
+        {
+            "id": 3,
+            "name": "Sogan",
+            "url_image": "https://storage.googleapis.com/ambatik_bucket/batik_photo/3_sogan.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Nitik",
+            "url_image": "https://storage.googleapis.com/ambatik_bucket/batik_photo/9_nitik.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Kawung",
+            "url_image": "https://storage.googleapis.com/ambatik_bucket/batik_photo/12_kawung.png"
+        }
+    ]
+}
+```
+
+</details>
 

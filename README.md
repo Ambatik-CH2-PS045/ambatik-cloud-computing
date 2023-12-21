@@ -106,7 +106,7 @@ Our app has two backend services:
 
 ## API
 <details>
-  ## <summary>Article</summary>
+  <summary>## Article</summary>
   
    ## Get all articles
 

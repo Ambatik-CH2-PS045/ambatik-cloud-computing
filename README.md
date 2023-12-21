@@ -280,6 +280,34 @@ POST /users/register
 |---|---|---|
 | `-` | `-` | `-` |
 
+**Request Body:**
+
+```JSON
+{
+    "name": "Jean Doe",
+    "email": "jeandoe@gmail.com",
+    "username": "jeandoe",
+    "password": "jeandoe123",
+    "phone": "081234567890"
+}
+```
+
+**Responses:**
+Success register
+```JSON
+{
+    "error": false,
+    "message": "Success register"
+}
+```
+
+Account already exist
+```JSON
+{
+    "error": true,
+    "message": "Username or email already registered yet"
+}
+```
  ## User login
 
 ## Get user details

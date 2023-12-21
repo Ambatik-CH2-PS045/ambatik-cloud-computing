@@ -309,6 +309,44 @@ Account already exist
 }
 ```
  ## User login
+ ```http
+POST /users/register
+```
+**Parameters:**
+
+| Parameter | Type | Description |
+|---|---|---|
+| `-` | `-` | `-` |
+
+**Request Body:**
+
+```JSON
+{
+    "error": true,
+    "message": "Please regist first"
+}
+```
+
+**Responses:**
+Account not registered
+```JSON
+{
+    "error": true,
+    "message": "Please regist first"
+}
+```
+
+Success login
+```JSON
+{
+    "error": false,
+    "message": "Login success",
+    "data": {
+        "id": 1,
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJpYXQiOjE3MDMxNDg3Njd9.MH67wX73tS-Nz-Y1qZC8jWgqFdQQUrOXUDg0Sl0H4kk"
+    }
+}
+```
 
 ## Get user details
 
